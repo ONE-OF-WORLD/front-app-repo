@@ -59,13 +59,11 @@ jobs:
       - name: Setup Kustomize
         uses: imranismail/setup-kustomize@v1
 
-      - name: Checkout kustomize repository
+      - name: Checkout Repository
         uses: actions/checkout@v2
         with:
-          repository: /k8s-manifest-repo
+          repository: owner/k8s-manifest-repo
           ref: main
-          token: ${{ secrets.ACTION_TOKEN }}
-          path: k8s-manifest-repo
 
       - name: Update Kubernetes resources
         run: |
